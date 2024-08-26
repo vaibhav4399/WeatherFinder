@@ -9,31 +9,31 @@ export let data = [
     {
         id: "Weather",
         value: "",
-        icon: <WeatherIcon className="hidden md:block basis-1/2" />
+        icon: <WeatherIcon className="card-icon" />
     },
     {
         id: "Temperature",
         value: "",
-        icon: <TemperatureIcon className="hidden md:block basis-1/2" />
+        icon: <TemperatureIcon className="card-icon" />
     },
     {
         id: "Humidity",
         value: "",
-        icon: <HumidityIcon className="hidden md:block basis-1/2" />
+        icon: <HumidityIcon className="card-icon" />
     },
     {
         id: "Wind Speed",
         value: "",
-        icon: <WindspeedIcon className="hidden md:block basis-1/2" />
+        icon: <WindspeedIcon className="card-icon" />
     },
     {
         id: "Sunrise",
         value: "",
-        icon: <SunriseIcon className="hidden md:block basis-1/2" />
+        icon: <SunriseIcon className="card-icon" />
     },
     {
         id: "Sunset",
         value: "",
-        icon: <SunsetIcon className="hidden md:block basis-1/2" />
+        icon: <SunsetIcon className="card-icon" />
     }
 ]

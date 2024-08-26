@@ -1,0 +1,19 @@
+header {
+    @apply flex sm:w-full h-20 sm:h-28 pt-5 justify-between max-sm:flex-col;
+
+    div.logo {
+        @apply md:w-w20 sm:mx-4 flex justify-center max-sm:basis-full max-sm:h-24;
+
+        img {
+            @apply h-full;
+        }
+    }
+
+    div.locate-btn {
+        @apply flex justify-center items-center max-sm:mt-8;
+
+        .btn {
+            @apply text-black font-semibold text-xl px-5 rounded-xl sm:mr-10 bg-blue-200;
+        }
+    }
+}

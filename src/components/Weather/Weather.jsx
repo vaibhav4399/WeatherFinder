@@ -1,6 +1,5 @@
 import { useEffect, useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ASSETS_PATH } from '../../config/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -30,13 +29,11 @@ function Weather() {
 
 
     const handleNext = () => {
-        console.log(currentIndex);
         setDirection(1);
         setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     }
 
     const handlePrev = () => {
-        console.log(currentIndex)
         setDirection(-1);
         setCurrentIndex((prevIndex) =>  prevIndex === 0 ? data.length - 1 : prevIndex - 1)
     }
@@ -44,7 +41,6 @@ function Weather() {
     const dragHandler = (dragInfo) => {
         const dragDistance = dragInfo.offset.x;
         const swipeThreshold = 10;
-        console.log(dragInfo)
         if(dragDistance > swipeThreshold){
             
             setDirection(-1);
@@ -108,9 +104,9 @@ function Weather() {
     return (
         <>{
             loading && 
-           <div className='flex justify-center items-center w-w80 lg:w-w40'>
-            <FontAwesomeIcon onClick={handlePrev} icon={faArrowLeft} className='text-white hidden md:block text-4xl' />
-            <div className='w-w80 mx-auto flex justify-center'>
+           <div className='result-block'>
+            <FontAwesomeIcon onClick={handlePrev} icon={faArrowLeft} className='direction-btn' />
+            <div className='card-outer'>
                     <AnimatePresence custom={currentIndex} initial={false} mode='wait'>
                         <motion.div
                             key={currentIndex}
@@ -130,13 +126,13 @@ function Weather() {
                             dragConstraints={{left:0, right:0}}
                             dragElastic={1}
                             onDragEnd={(_, dragInfo) => dragHandler(dragInfo)}
-                            className="w-full h-full flex justify-center"
+                            className="card-inner"
                         >
                             <Card {...data[currentIndex]} />
                         </motion.div>
                     </AnimatePresence>
             </div>
-            <FontAwesomeIcon onClick={handleNext} icon={faArrowRight} className='text-white hidden md:block text-4xl' />
+            <FontAwesomeIcon onClick={handleNext} icon={faArrowRight} className='direction-btn' />
            </div>
         }
         </>
