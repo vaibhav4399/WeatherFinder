@@ -20,6 +20,9 @@ export default {
         bodyBackgroud: '#f8f8f8',
         bodyBackgroundDark: '#000'
       },
+      backgroundImage: {
+        'homeBackground': "url(/weather_background.webp)"
+      },
       width: {
         w10: '10%',
         w20: '20%',
