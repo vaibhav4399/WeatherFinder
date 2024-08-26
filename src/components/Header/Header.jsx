@@ -32,7 +32,6 @@ function Header() {
     }
 
     const handleLocation = () => {
-        console.log(longitude, latitude);
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(successLocation, errorLocation)
         }
@@ -60,16 +59,16 @@ function Header() {
 
     return (
         <>
-            <header className='flex sm:w-full h-20 sm:h-28 pt-5 justify-between max-sm:flex-col'>
-                <div className='md:w-w20 sm:mx-4 flex justify-center max-sm:basis-full max-sm:h-24'>
-                  <img className='h-full' src={'/weatherfinder-transparent.webp'} />  
+            <header>
+                <div className='logo'>
+                  <img src={'/weatherfinder-transparent.webp'} />  
                 </div>
-                <div className="flex justify-center items-center max-sm:mt-8">
+                <div className="locate-btn">
                     <motion.button onClick={handleLocation}
                     whileTap={{
                         scale: 1.08
                     }} 
-                    className='text-black font-semibold text-xl px-5 rounded-xl sm:mr-10 bg-blue-200'>
+                    className='btn'>
                         Locate Me!
                     </motion.button> 
                 </div>

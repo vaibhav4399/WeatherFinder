@@ -1,0 +1,39 @@
+div.result-block {
+    @apply flex justify-center items-center w-w80 lg:w-w40;
+
+    .direction-btn {
+        @apply text-white hidden md:block text-4xl;
+    }
+
+    .card-outer {
+        @apply w-w80 mx-auto flex justify-center;
+
+        .card-inner {
+            @apply w-full h-full flex justify-center;
+        }
+    }
+
+    .card {
+        @apply h-[500px] bg-white p-5 my-16 lg:my-24 sm:max-w-md w-w80 rounded-xl bg-homeBackground bg-no-repeat bg-cover hover:shadow-gray-500 hover:shadow-xl;
+
+        .card-body {
+            @apply flex flex-col h-full;
+
+            .card-head {
+                @apply flex flex-row h-2/5 w-full items-center justify-center;
+
+                .card-icon {
+                    @apply hidden md:block basis-1/2;
+                }
+
+                .card-title {
+                    @apply basis-full sm:basis-1/2 text-2xl font-semibold text-center;
+                }
+            }
+
+            .card-content {
+                @apply h-3/5 flex justify-center items-center font-semibold text-4xl;
+            }
+        }
+    }
+}
