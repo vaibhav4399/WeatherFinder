@@ -10,7 +10,7 @@ function Layout() {
 
     const [latitude, setLatitude] = useState(66.3493);
     const [longitude, setLongitude] = useState(-164.333);
-    const [cityName, setCityName] = useState("");
+    const [cityName, setCityName] = useState("Kotzebue");
 
     return (
         <dataContext.Provider value={{longitude, setLongitude, latitude, setLatitude, cityName, setCityName}}>
