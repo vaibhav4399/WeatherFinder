@@ -16,7 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="result" element={<Weather />} />
         </Route>
-        <Route path="*" element={<Notfound />} />
+        <Route path="*" element={<Notfound {...{from:0 , to:404}} />} />
       </Routes>
     </>
   )

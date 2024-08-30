@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence, motion } from 'framer-motion';
-
+import { toast } from 'react-toastify';
 import { dataContext } from '../Layout/Layout';
 
-import { ASSETS_PATH } from '../../config/constants';
+import weatherIcon from '../../assets/weather_icon.webp?react'
+import temperatureIcon from '../../assets/temperature_icon.webp?react'
+
 
 import './Home.css';
 
@@ -47,11 +49,14 @@ function Home() {
         fetch(URL)
             .then((response) => response.json())
             .then(data => {
+                if(data["cod"] !== 200) throw new Error(data["message"]);
+
                 setWeather(data["weather"][0]["main"]);
                 setTemperature(data["main"]["temp"]);
                 setIsCelsius(true);
                 setOutput(true);
             })
+            .catch(error => toast.error(`${error.message} for ${cityName}`))
 
     }
 
@@ -99,7 +104,7 @@ function Home() {
                         className={`result-col ${output ? "" : "hidden"}`}>
                         <div className='mini-card'>
                             <div className="w-w40">
-                                <img className='object-contain' alt="weather" src={`${ASSETS_PATH}/weather_icon.webp`} width="100px" height="100px" />
+                                <img className='object-contain' alt="weather" src={weatherIcon} width="100px" height="100px" />
                             </div>
                             <div className='w-w60 text-center text-3xl'>
                                 <p>{weather}</p>
@@ -107,7 +112,7 @@ function Home() {
                         </div>
                         <div className='mini-card'>
                             <div className='w-w40'>
-                                <img className="object-contain" alt="temperature" src={`${ASSETS_PATH}/temperature_icon.webp`} width="80px" height="80px"/>
+                                <img className="object-contain" alt="temperature" src={temperatureIcon} width="80px" height="80px"/>
                             </div>
                             <div className='w-w60 flex justify-around text-3xl'>
                                 <p className=''>{temperature} {isCelsius ? "°C" : "°F"}</p> 

@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -61,7 +60,7 @@ function Header() {
         <>
             <header>
                 <div className='logo'>
-                  <img src={'/weatherfinder-transparent.webp'} />  
+                  <img alt="Logo" src={'/weatherfinder-transparent.webp'} />  
                 </div>
                 <div className="locate-btn">
                     <motion.button onClick={handleLocation}
