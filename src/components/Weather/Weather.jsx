@@ -122,7 +122,7 @@ function Weather() {
                             whileHover={{
                                 scale: 1.05
                             }}
-                             drag="x"
+                            drag="x"
                             dragConstraints={{left:0, right:0}}
                             dragElastic={1}
                             onDragEnd={(_, dragInfo) => dragHandler(dragInfo)}

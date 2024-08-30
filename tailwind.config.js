@@ -21,7 +21,8 @@ export default {
         bodyBackgroundDark: '#000'
       },
       backgroundImage: {
-        'homeBackground': "url(/weather_background.webp)"
+        'homeBackground': "url(/weather_background.webp)",
+        "404Background": "url(/404_background.webp)"
       },
       width: {
         w10: '10%',
